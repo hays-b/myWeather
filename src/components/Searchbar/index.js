@@ -9,7 +9,7 @@ import {
 
 import React, { useEffect, useState } from "react";
 
-import { fetchQueryResults, fetchWeather } from "../../api";
+import { fetchQueryResults, fetchWeather, fetchForecast } from "../../api";
 
 import useAppContext from "../context/useAppContext";
 
@@ -21,6 +21,8 @@ export default function Searchbar() {
     setResult,
     weather,
     setWeather,
+    forecast,
+    setForecast,
     searchTerm,
     setSearchTerm,
     dropdown,
@@ -48,7 +50,13 @@ export default function Searchbar() {
       const data = await fetchWeather(location.lat, location.lon);
       setWeather(data);
     };
+    const displayForecast = async () => {
+      const data = await fetchForecast(location.lat, location.lon);
+      setForecast(data);
+    };
+    
     displayWeather();
+    displayForecast();
     // Add to search history
   };
 

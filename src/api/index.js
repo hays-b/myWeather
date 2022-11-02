@@ -37,7 +37,7 @@ try {
   const response = await fetch(url);
   const data = await response.json();
 
-  console.log(data)
+  // console.log(data)
 
   return data;
 } catch (error) {
@@ -50,7 +50,7 @@ export async function fetchForecast(
   lat,
   lon
 ) {
-  const url = `${baseURL}/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  const url = `${baseURL}/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
 try {
   const response = await fetch(url);

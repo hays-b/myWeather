@@ -4,9 +4,10 @@ import { fetchQueryResults, fetchWeather } from '../../api';
 export const AppContext = React.createContext();
 
 const AppContextProvider = ({ children }) => {
-  
+
   const [result, setResult] = useState();
   const [weather, setWeather] = useState();
+  const [forecast, setForecast] = useState();
   const [searchTerm, setSearchTerm] = useState("");
   const [dropdown, setDropdown] = useState(false);
 
@@ -17,6 +18,8 @@ const AppContextProvider = ({ children }) => {
         setResult,
         weather,
         setWeather,
+        forecast,
+        setForecast,
         searchTerm,
         setSearchTerm,
         dropdown,

@@ -13,14 +13,16 @@ import React, { useEffect, useState } from "react";
 import AppContextProvider from './context/AppContext';
 
 import Searchbar from "./Searchbar"
-import CurrentForecast from "./CurrentForecast"
+import CurrentWeather from "./CurrentWeather"
+import Forecast from "./Forecast"
 
 export default function Main() {
   return (
     <View style={styles.container}>
         <AppContextProvider>
       <Searchbar />
-      <CurrentForecast />
+      <CurrentWeather />
+      <Forecast />
       <StatusBar style="auto" />
       </AppContextProvider>
     </View>
