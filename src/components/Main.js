@@ -1,33 +1,38 @@
-// import {
-//   StyleSheet,
-//   Text,
-//   View,
-//   TextInput,
-//   TouchableOpacity,
-// } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
-// import React, { useEffect, useState } from "react";
+import { StatusBar } from "expo-status-bar";
 
-// export default function Main() {
-//   return (
-//     <View>
-//       <Searchbar />
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
+import React, { useEffect, useState } from "react";
 
-// const styles = StyleSheet.create({
-//   // container: {
-//   //   flex: 1,
-//   //   backgroundColor: "#fff",
-//   //   alignItems: "center",
-//   //   justifyContent: "center",
-//   // },
-//   //   input: {
-//   //     height: 40,
-//   //     margin: 12,
-//   //     borderWidth: 1,
-//   //     padding: 10,
-//   //   },
-// });
+import AppContextProvider from './context/AppContext';
+
+import Searchbar from "./Searchbar"
+import CurrentForecast from "./CurrentForecast"
+
+export default function Main() {
+  return (
+    <View style={styles.container}>
+        <AppContextProvider>
+      <Searchbar />
+      <CurrentForecast />
+      <StatusBar style="auto" />
+      </AppContextProvider>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#fff",
+      // alignItems: "center",
+      // justifyContent: "center",
+    },
+  });
+  
