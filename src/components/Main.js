@@ -10,21 +10,17 @@ import { StatusBar } from "expo-status-bar";
 
 import React, { useEffect, useState } from "react";
 
-import AppContextProvider from './context/AppContext';
-
 import Searchbar from "./Searchbar"
 import CurrentWeather from "./CurrentWeather"
-import Forecast from "./Forecast"
+// import Forecast from "./Forecast"
 
 export default function Main() {
   return (
     <View style={styles.container}>
-        <AppContextProvider>
       <Searchbar />
       <CurrentWeather />
-      <Forecast />
+      {/* <Forecast /> */}
       <StatusBar style="auto" />
-      </AppContextProvider>
     </View>
   );
 }
