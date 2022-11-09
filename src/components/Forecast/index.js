@@ -18,7 +18,7 @@ export default function Forecast({snippet}) {
 
 //   const snippet = forecast?.list[0];
 
-console.log("in Forecast", snippet)
+// console.log("in Forecast", snippet)
 
   const date = new Date(snippet?.dt_txt.replace(" ", "T"));
 

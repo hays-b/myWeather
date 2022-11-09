@@ -12,7 +12,9 @@ const useAppContext = () => {
     searchTerm,
     setSearchTerm,
     dropdown,
-    setDropdown
+    setDropdown,
+    location,
+    setLocation
   } = useContext(AppContext);
 
   return {
@@ -25,7 +27,9 @@ const useAppContext = () => {
     searchTerm,
     setSearchTerm,
     dropdown,
-    setDropdown
+    setDropdown,
+    location,
+    setLocation
   };
 };
 

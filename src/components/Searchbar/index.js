@@ -27,11 +27,8 @@ export default function Searchbar() {
     setSearchTerm,
     dropdown,
     setDropdown,
+    setLocation,
   } = useAppContext();
-  // const [result, setResult] = useState();
-  // const [weather, setWeather] = useState();
-  // const [searchTerm, setSearchTerm] = useState("");
-  // const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
     if (searchTerm.length > 1) {
@@ -44,20 +41,9 @@ export default function Searchbar() {
     }
   }, [searchTerm]);
 
-  const onPress = (location) => {
+  const onPress = (resultLocation) => {
     setDropdown(false);
-    const displayWeather = async () => {
-      const data = await fetchWeather(location.lat, location.lon);
-      setWeather(data);
-    };
-    const displayForecast = async () => {
-      const data = await fetchForecast(location.lat, location.lon);
-      setForecast(data);
-    };
-    
-    displayWeather();
-    displayForecast();
-    // Add to search history
+    setLocation({lat: resultLocation.lat, lon: resultLocation.lon});
   };
 
   return (
@@ -72,22 +58,24 @@ export default function Searchbar() {
         />
         <TextInput
           style={styles.input}
-          placeholder="London, Ohio, US"
           onChangeText={(text) => setSearchTerm(text)}
+          value={searchTerm}
           onTouchStart={() => setDropdown(true)}
+          placeholder="New Orleans, Louisiana, US"
+          placeholderTextColor="#7A7A7A" 
         />
       </View>
       {/* <Text>{searchTerm}</Text> */}
       {dropdown && Array.isArray(result)
-        ? result.map((location) => (
+        ? result.map((resultLocation) => (
             <TouchableHighlight
               style={styles.options}
               underlayColor="#D7D7D7"
-              key={location.lat}
-              onPress={() => onPress(location)}
+              key={resultLocation.lat}
+              onPress={() => onPress(resultLocation)}
             >
               <Text style={styles.text}>
-                {location.name}, {location.state}, {location.country}
+                {resultLocation.name}, {resultLocation.state}, {resultLocation.country}
               </Text>
             </TouchableHighlight>
           ))

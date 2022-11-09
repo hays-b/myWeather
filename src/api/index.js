@@ -16,11 +16,11 @@ export async function fetchQueryResults(
     // const url = `${baseURL}/geo/1.0/direct?q=${cityName, ',' || ''} ${stateCode , ',' || ''} ${countryCode || ''}&limit=5&appid=${apiKey}`;
     const url = `${baseURL}/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`;
 
-    // console.log(url)
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      
+      // console.log("cities", data)
     return data;
   } catch (error) {
     throw error;
@@ -37,7 +37,7 @@ try {
   const response = await fetch(url);
   const data = await response.json();
 
-  // console.log(data)
+  console.log(data)
 
   return data;
 } catch (error) {
