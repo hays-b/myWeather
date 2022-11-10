@@ -18,6 +18,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     padding: 10,
   },
+  detailsContainer: {
+    borderWidth: 1,
+    borderRadius: 10,
+    width: 350,
+    height: 120,
+    justifyContent: "space-evenly",
+    padding: 10,
+  },
   forecastContainer: {
     // display: 'flex',
     // flexDirection: 'row',
@@ -35,6 +43,10 @@ const styles = StyleSheet.create({
     height: 200,
     overflow: 'hidden',
     borderRadius: 10,
+  },
+  logo: {
+    width: 66,
+    height: 58,
   },
 });
 

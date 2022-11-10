@@ -31,7 +31,7 @@ export async function fetchWeather(
   lat,
   lon
 ) {
-  const url = `${baseURL}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  const url = `${baseURL}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
 
 try {
   const response = await fetch(url);
