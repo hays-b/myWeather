@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 
 import Searchbar from "./Searchbar"
 import CurrentWeather from "./CurrentWeather"
+import Footer from "./Footer"
 // import Forecast from "./Forecast"
 
 export default function Main() {
@@ -20,6 +21,7 @@ export default function Main() {
       <Searchbar />
       <CurrentWeather />
       {/* <Forecast /> */}
+      <Footer />
       <StatusBar style="auto" />
     </View>
   );

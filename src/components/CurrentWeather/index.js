@@ -85,11 +85,11 @@ export default function CurrentWeather() {
             ></Image>
           </View>
           <View style={styles.detailsContainer}>
-            <Text>Humidity: {weather.main.humidity}%</Text>
-            <Text>Wind: {weather.wind.speed}mph</Text>
-            <Text>Visibility: {weather.visibility}m</Text>
-            <Text>Max temp: {weather.main.temp_max}</Text>
-            <Text>Min temp: {weather.main.temp_min}</Text>
+            <Text style={styles.details}>Humidity: {weather.main.humidity}%</Text>
+            <Text style={styles.details}>Wind: {weather.wind.speed}mph</Text>
+            <Text style={styles.details}>Visibility: {weather.visibility}m</Text>
+            <Text style={styles.details}>Max temp: {weather.main.temp_max}</Text>
+            <Text style={styles.details}>Min temp: {weather.main.temp_min}</Text>
           </View>
           <View style={styles.scrollViewContainer}>
             <ScrollView style={styles.forecastContainer} horizontal={true}>

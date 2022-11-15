@@ -21,6 +21,9 @@ export default function Forecast({snippet}) {
 // console.log("in Forecast", snippet)
 
   const date = new Date(snippet?.dt_txt.replace(" ", "T"));
+  const today = new Date()
+
+  const isItToday = (date.getDay() === today.getDay()) ? true: false
 
 
   const week = [
@@ -83,7 +86,7 @@ export default function Forecast({snippet}) {
     <View style={styles.container}>
       {/* {forecast ? ( */}
         <>
-          <Text>{week[date.getDay()]}</Text>
+          <Text>{isItToday ? 'Today' : week[date.getDay()]}</Text>
           <Text>{formatTime()}</Text>
           <Text>{snippet.main.temp}&#8457;</Text>
           <Text>{snippet.weather[0].description}</Text>
